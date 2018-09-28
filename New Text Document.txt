@@ -1,1 +1,225 @@
 $ git config --global user.name "Ashwin Gophan"
+
+ git config --global user.email "ashwin_gophan@persistent.co.in"
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo
+$ git config user.name
+Ashwin Gophan
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo
+$ git config user.email
+ashwin_gophan@persistent.co.in
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+credential.helper=manager
+user.name=Ashwin Gophan
+user.email=ashwin_gophan@persistent.co.in
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo
+$ git config --global core editor notepad
+error: key does not contain a section: core
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo
+$ git config --global core.editor notepad
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+credential.helper=manager
+user.name=Ashwin Gophan
+user.email=ashwin_gophan@persistent.co.in
+core.editor=notepad
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo
+$ git init
+Initialized empty Git repository in C:/GitDemo/.git/
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        File1.txt.txt
+        New Text Document.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        File1.txt
+        New Text Document.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git add File1.txt
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   File1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        New Text Document.txt
+
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git commit -m "File1.txt is created.."
+[master (root-commit) 26a5883] File1.txt is created..
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File1.txt
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        New Text Document.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        New Text Document.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git add .
+./    ../   .git/
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git add .
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   File1.txt
+        new file:   New Text Document.txt
+
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git commit -m "Change1 in file1"
+[master 1a71367] Change1 in file1
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 New Text Document.txt
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git commit -am "Change 2 in file1"
+[master 692e4df] Change 2 in file1
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log
+commit 692e4df666aaf860d6ed241884cef0d5ffbb650f (HEAD -> master)
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:21:40 2018 +0530
+
+    Change 2 in file1
+
+commit 1a71367c048e3a65a922a46e82599b7e9015e025
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:18:38 2018 +0530
+
+    Change1 in file1
+
+commit 26a588363e2f3bebc0c896b2063c3b3ecf4c8ac1
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:13:41 2018 +0530
+
+    File1.txt is created..
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --oneline
+692e4df (HEAD -> master) Change 2 in file1
+1a71367 Change1 in file1
+26a5883 File1.txt is created..
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --oneline -2
+692e4df (HEAD -> master) Change 2 in file1
+1a71367 Change1 in file1
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$
