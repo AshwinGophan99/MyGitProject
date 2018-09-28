@@ -28,6 +28,10 @@ filter.lfs.clean=git-lfs clean -- %f
 filter.lfs.smudge=git-lfs smudge -- %f
 filter.lfs.process=git-lfs filter-process
 filter.lfs.required=true
+
+
+
+
 credential.helper=manager
 user.name=Ashwin Gophan
 user.email=ashwin_gophan@persistent.co.in
@@ -220,6 +224,212 @@ Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
 $ git log --oneline -2
 692e4df (HEAD -> master) Change 2 in file1
 1a71367 Change1 in file1
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$
+
+
+
+$ git log --until="9-27-2018"
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --grep="change1"
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --grep="Change1"
+commit 1a71367c048e3a65a922a46e82599b7e9015e025
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:18:38 2018 +0530
+
+    Change1 in file1
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ gitAccess is denied.
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --since="9-27-2018"
+commit 692e4df666aaf860d6ed241884cef0d5ffbb650f (HEAD -> master)
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:21:40 2018 +0530
+
+    Change 2 in file1
+
+commit 1a71367c048e3a65a922a46e82599b7e9015e025
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:18:38 2018 +0530
+
+    Change1 in file1
+
+commit 26a588363e2f3bebc0c896b2063c3b3ecf4c8ac1
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:13:41 2018 +0530
+
+    File1.txt is created..
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --help
+Access is denied.
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   New Text Document.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git diff
+diff --git a/File1.txt b/File1.txt
+index a3b95dc..7e455ce 100644
+--- a/File1.txt
++++ b/File1.txt
+@@ -2,4 +2,6 @@ welcome to Devops.....
+
+ Change 1
+
+-change 2
+\ No newline at end of file
++change 2
++
++change 3
+\ No newline at end of file
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git commit -m "Change3 in file1"
+[master 48aeb69] Change3 in file1
+ 1 file changed, 224 insertions(+)
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log
+commit 48aeb69c35dab2417f5dbe88db8cc06f6ad6d1a5 (HEAD -> master)
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:50:12 2018 +0530
+
+    Change3 in file1
+
+commit 692e4df666aaf860d6ed241884cef0d5ffbb650f
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:21:40 2018 +0530
+
+    Change 2 in file1
+
+commit 1a71367c048e3a65a922a46e82599b7e9015e025
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:18:38 2018 +0530
+
+    Change1 in file1
+
+commit 26a588363e2f3bebc0c896b2063c3b3ecf4c8ac1
+Author: Ashwin Gophan <ashwin_gophan@persistent.co.in>
+Date:   Fri Sep 28 12:13:41 2018 +0530
+
+    File1.txt is created..
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --online
+fatal: unrecognized argument: --online
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --oneline
+48aeb69 (HEAD -> master) Change3 in file1
+692e4df Change 2 in file1
+1a71367 Change1 in file1
+26a5883 File1.txt is created..
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git checkout 1a71367
+error: Your local changes to the following files would be overwritten by checkout:
+        File1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git checkout 1a71367
+error: Your local changes to the following files would be overwritten by checkout:
+        File1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git commit -am "change 4"
+[master 8683a4f] change 4
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --oneline
+8683a4f (HEAD -> master) change 4
+48aeb69 Change3 in file1
+692e4df Change 2 in file1
+1a71367 Change1 in file1
+26a5883 File1.txt is created..
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git checkout 1a71367
+Note: checking out '1a71367'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 1a71367 Change1 in file1
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo ((1a71367...))
+$ git checkout master
+Previous HEAD position was 1a71367 Change1 in file1
+Switched to branch 'master'
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git add .
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git commit -m ".gitignore file is created......."
+[master 9375488] .gitignore file is created.......
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+
+Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
+$ git log --oneline
+9375488 (HEAD -> master) .gitignore file is created.......
+8683a4f change 4
+48aeb69 Change3 in file1
+692e4df Change 2 in file1
+1a71367 Change1 in file1
+26a5883 File1.txt is created..
 
 Administrator@MASTERDOTNETWIN10 MINGW64 /c/GitDemo (master)
 $
