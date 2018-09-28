@@ -8,5 +8,3 @@ Change ---> 2
 
 change 4
 
-pull = fetch + merge
-
